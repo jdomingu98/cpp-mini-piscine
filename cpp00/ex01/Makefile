@@ -2,7 +2,7 @@
 NAME	= contactList
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 SRCS	= PhoneBook.cpp Contact.cpp ContactList.cpp
-OBJS	= $(SRCS.cpp=.o)
+OBJS	= $(SRCS:.cpp=.o)
 
 all:	$(NAME)
 
