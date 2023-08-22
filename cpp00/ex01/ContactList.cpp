@@ -44,6 +44,8 @@ int main(void)
     {
         std::cout << "Write a command (ADD/ SEARCH/ EXIT):" << std::endl; 
         std::cin >> command;
+        for (unsigned long i = 0; i < command.length(); i++)
+            command[i] = char(toupper(command[i]));
         if (command.compare("ADD") == 0)
         {
             std::cout << "You are now in addition mode. Now give the following contact info:" << std::endl;
@@ -56,7 +58,7 @@ int main(void)
             phoneBook.printBook();
             std::cout << "You are now in search mode. Write a valid Phonebook index:" << std::endl;
             std::cin >> i;
-            if (i < 0 || i >= 8)
+            if (i < 0 || i > 7)
                 std::cout << "Wrong index. Exiting search mode..." << std::endl;
             else
             {
@@ -64,7 +66,7 @@ int main(void)
                 phoneBook.printSelectedContact(i);
             }
         }
-        else
+        else if (command.compare("EXIT") != 0)
             std::cout << "Wrong command! Valid options are: ADD / SEARCH / EXIT" << std::endl;
     }
     std::cout << "Exiting..." << std::endl;

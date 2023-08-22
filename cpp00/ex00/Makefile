@@ -1,24 +1,34 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jdomingu <jdomingu@student.42malaga.com    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/08/22 17:59:59 by jdomingu          #+#    #+#              #
+#    Updated: 2023/08/22 18:22:38 by jdomingu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME = megaphone
-CC = g++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-SRCS = 	megaphone.cpp
-OBJS = (SRCS.cpp=.o)
+SRCS = megaphone.cpp
+OBJS = $(SRCS:.cpp=.o)
 
-all = $(NAME)
+all: $(NAME)
 
-%.o:		%.cpp
-			$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.cpp
+	g++ $(CFLAGS) -c $< -o $@
 
-$(NAME) = 	$(OBJS)
-			$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(OBJS)
+	g++ $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean:
-			rm -rf $(OBJS)
+	rm -rf $(OBJS)
 
-fclean: 	clean
-			rm -f $(NAME)
+fclean: clean
+	rm -f $(NAME)
 
-re: 		fclean all
+re: fclean all
 
-.PHONY: 	all clean fclean re
+.PHONY: all clean fclean re

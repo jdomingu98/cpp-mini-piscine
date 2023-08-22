@@ -1,6 +1,7 @@
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() {
+	this->_first_idx = 0;
 	this->_current_idx = 0;
 }
 
@@ -8,36 +9,33 @@ PhoneBook::~PhoneBook() {}
 
 void	PhoneBook::addContact(Contact newContact)
 {
-	if (this->_current_idx == 8)
-		this->_current_idx = 0;
 	this->_contacts[this->_current_idx] = newContact;
 	this->_current_idx++;
+	if (this->_current_idx == 8)
+		this->_current_idx = 0;
+	if (this->_current_idx == this->_first_idx)
+		this->_first_idx = this->_current_idx + 1;
+	if (this->_first_idx == 8)
+		this->_first_idx = 0;
+	std::cout << this->_first_idx << " " << this->_current_idx << std::endl;
 }
 
 std::string	PhoneBook::truncate(std::string word)
 {
-	return (word.length() >= 10 ? (word.substr(0, 9) + ".") : (word));
+	return (word.length() >= 10 ? word.substr(0, 9) + "." : word);
 }
 
 void	PhoneBook::printBook()
 {
-	int end;
+	int i = this->_first_idx - 1;
 
-	if (this->_current_idx == 0)
-		end = 7;
-	else
-		end = this->_current_idx - 1;
-	for (int i = this->_current_idx; i != end; i++)
+	while (++i != this->_current_idx)
 	{
-		if (this->_contacts[i].getFirstName().compare("") != 0)
-		{
-			std::cout << std::setw(10) << i << "|";
-			std::cout << std::setw(10) << truncate(this->_contacts[i].getFirstName()) << "|";
-			std::cout << std::setw(10) << truncate(this->_contacts[i].getLastName()) << "|";
-			std::cout << std::setw(10) << truncate(this->_contacts[i].getNickname()) << std::endl;
-			if (i == 7)
-			i = 0;
-		}
+		std::cout << std::setw(10) << i << "|";
+		std::cout << std::setw(10) << truncate(this->_contacts[i].getFirstName()) << "|";
+		std::cout << std::setw(10) << truncate(this->_contacts[i].getLastName()) << "|";
+		std::cout << std::setw(10) << truncate(this->_contacts[i].getNickname()) << std::endl;
+		i == 7 ? i = -1 : i;
 	}
 }
 

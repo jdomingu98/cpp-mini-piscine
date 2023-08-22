@@ -8,6 +8,7 @@ class PhoneBook
 {
 	private:
 		Contact _contacts[8];
+		int		_first_idx;
 		int     _current_idx;
 
 	public:
