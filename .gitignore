@@ -1,3 +1,9 @@
+.vscode/*
+megaphone
+contactList
+account
+*.pdf
+
 # Prerequisites
 *.d
 
