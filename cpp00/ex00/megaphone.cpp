@@ -12,7 +12,7 @@ int	main(int argc, char **argv)
 		{
 			std::string args(argv[i]);
 			for (unsigned long j = 0; j < args.length(); j++)
-				std::cout << char(toupper(args[j]));
+				std::cout << char(std::toupper(args[j]));
 		}
 	}
 	std::cout << std::endl;

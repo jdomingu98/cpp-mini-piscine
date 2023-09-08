@@ -10,10 +10,15 @@ class PhoneBook
 		Contact _contacts[8];
 		int		_first_idx;
 		int     _current_idx;
+		bool	_circular;
 
 	public:
 		PhoneBook();
 		~PhoneBook();
+
+		bool		getCircular();
+		void		setCircular(bool value);
+		int			getCurrentIndex();
 
 		void		addContact(Contact c);
 		void		printBook();

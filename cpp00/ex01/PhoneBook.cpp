@@ -3,21 +3,39 @@
 PhoneBook::PhoneBook() {
 	this->_first_idx = 0;
 	this->_current_idx = 0;
+	this->_circular = false;
 }
 
 PhoneBook::~PhoneBook() {}
+
+bool	PhoneBook::getCircular()
+{
+	return this->_circular;
+}
+
+void	PhoneBook::setCircular(bool value)
+{
+	this->_circular = value;
+}
+
+int	PhoneBook::getCurrentIndex()
+{
+	return this->_current_idx;
+}
 
 void	PhoneBook::addContact(Contact newContact)
 {
 	this->_contacts[this->_current_idx] = newContact;
 	this->_current_idx++;
 	if (this->_current_idx == 8)
+	{
 		this->_current_idx = 0;
+		this->_circular = true;
+	}
 	if (this->_current_idx == this->_first_idx)
 		this->_first_idx = this->_current_idx + 1;
 	if (this->_first_idx == 8)
 		this->_first_idx = 0;
-	std::cout << this->_first_idx << " " << this->_current_idx << std::endl;
 }
 
 std::string	PhoneBook::truncate(std::string word)
@@ -27,15 +45,19 @@ std::string	PhoneBook::truncate(std::string word)
 
 void	PhoneBook::printBook()
 {
-	int i = this->_first_idx - 1;
-
-	while (++i != this->_current_idx)
+	std::cout << std::setw(10) << "Index" << "|";
+	std::cout << std::setw(10) << "Name" << "|";
+	std::cout << std::setw(10) << "LastName" << "|";
+	std::cout << std::setw(10) << "Nickname" << "|" << std::endl;
+	for(int i = 0; i < 8; i++)
 	{
-		std::cout << std::setw(10) << i << "|";
-		std::cout << std::setw(10) << truncate(this->_contacts[i].getFirstName()) << "|";
-		std::cout << std::setw(10) << truncate(this->_contacts[i].getLastName()) << "|";
-		std::cout << std::setw(10) << truncate(this->_contacts[i].getNickname()) << std::endl;
-		i == 7 ? i = -1 : i;
+		if(!(!getCircular() && i > getCurrentIndex() - 1))
+		{
+			std::cout << std::setw(10) << i << "|";
+			std::cout << std::setw(10) << truncate(this->_contacts[i].getFirstName()) << "|";
+			std::cout << std::setw(10) << truncate(this->_contacts[i].getLastName()) << "|";
+			std::cout << std::setw(10) << truncate(this->_contacts[i].getNickname()) << "|" << std::endl;
+		}
 	}
 }
 
