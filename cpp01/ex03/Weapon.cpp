@@ -6,7 +6,7 @@ Weapon::Weapon(std::string type) : type(type) {}
 
 Weapon::~Weapon() {}
 
-const std::string Weapon::getType()
+const std::string &Weapon::getType()
 {
     return this->type;
 }
