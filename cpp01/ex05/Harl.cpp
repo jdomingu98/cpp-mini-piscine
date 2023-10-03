@@ -26,7 +26,7 @@ void Harl::error()
 
 void Harl::complain(std::string level)
 {
-    void (Harl::*complainPTR[])() = {Harl::debug, Harl::info, Harl::warning, Harl::error};
+    void (Harl::*complainPTR[4])() = {debug, info, warning, error};
     std::string mode[4] = {"debug", "info", "warning", "error"};
 
     for (int i = 0; i < 4; i++)
