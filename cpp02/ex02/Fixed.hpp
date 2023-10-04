@@ -30,7 +30,11 @@ class Fixed
         Fixed& operator * (const Fixed& f) const;
         Fixed& operator / (const Fixed& f) const;
 
-        //Los dos tipos de decremento e incremento
+        Fixed& operator ++ ();
+        Fixed operator ++ (int);
+        Fixed& operator -- ();
+        Fixed operator -- (int);
+
 
         int getRawBits() const;
         void setRawBits(int const raw);
@@ -38,7 +42,11 @@ class Fixed
         float toFloat() const;
         int toInt() const;
 
-        // Las cuatro funciones min y max
+        static Fixed &min(Fixed &f1, Fixed &f2);
+        static const Fixed &min(const Fixed &f1, const Fixed &f2);
+        static Fixed &max(Fixed &f1, Fixed &f2);
+        static const Fixed &max(const Fixed &f1, const Fixed &f2);
+
 };
 
 std::ostream& operator << (std::ostream &o, const Fixed& f);

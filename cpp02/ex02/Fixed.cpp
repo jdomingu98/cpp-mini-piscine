@@ -85,6 +85,32 @@ Fixed& Fixed::operator / (const Fixed& f) const
     return Fixed(this->toFloat() / f.toFloat());
 }
 
+Fixed& Fixed::operator ++ ()
+{
+    ++value;
+    return *this;
+}
+
+Fixed Fixed::operator ++ (int)
+{
+    Fixed aux(*this);
+    value++;
+    return aux;
+}
+
+Fixed& Fixed::operator -- ()
+{
+    --value;
+    return *this;
+}
+
+Fixed Fixed::operator -- (int)
+{
+    Fixed aux(*this);
+    value--;
+    return aux;
+}
+
 int Fixed::getRawBits(void) const {
     std::cout << "getRawBits member function called" << std::endl;
     return this->value;
@@ -103,6 +129,22 @@ float Fixed::toFloat() const
 int Fixed::toInt() const
 {
     return this->value >> this->rawBits;
+}
+
+Fixed &Fixed::min(Fixed &f1, Fixed &f2) {
+    return f1 < f2 ? f1 : f2;
+}
+
+const Fixed &Fixed::min(const Fixed &f1, const Fixed &f2) {
+    return f1.getRawBits() < f2.getRawBits() ? f1 : f2;
+}
+
+Fixed &Fixed::max(Fixed &f1, Fixed &f2) {
+    return f1 > f2 ? f1 : f2;
+}
+
+const Fixed &Fixed::max(const Fixed &f1, const Fixed &f2) {
+    return f1.getRawBits() < f2.getRawBits() ? f1 : f2;
 }
 
 std::ostream& operator << (std::ostream &o, const Fixed& f)
