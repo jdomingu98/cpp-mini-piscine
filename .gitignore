@@ -11,6 +11,9 @@ harl
 fixedPoints00
 fixedPoints01
 fixedPoints02
+clapTrap
+scavTrap
+flagTrap
 *.pdf
 
 # Prerequisites

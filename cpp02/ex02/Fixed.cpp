@@ -25,7 +25,7 @@ Fixed::Fixed(const int v)
 Fixed::Fixed(const float v)
 {
     std::cout << "Float constructor called" << std::endl;
-    this->value = roundf(v * (1 << this->rawBits));
+    this->value = (float) roundf(v * (1 << this->rawBits));
 }
 
 Fixed& Fixed::operator = (const Fixed& f)
@@ -65,22 +65,22 @@ bool Fixed::operator != (const Fixed& f) const
     return this->toFloat() != f.toFloat();
 }
 
-Fixed& Fixed::operator + (const Fixed& f) const
+Fixed Fixed::operator + (const Fixed& f) const
 {
     return Fixed(this->toFloat() + f.toFloat());
 }
 
-Fixed& Fixed::operator - (const Fixed& f) const
+Fixed Fixed::operator - (const Fixed& f) const
 {
     return Fixed(this->toFloat() - f.toFloat());
 }
 
-Fixed& Fixed::operator * (const Fixed& f) const
+Fixed Fixed::operator * (const Fixed& f) const
 {
     return Fixed(this->toFloat() * f.toFloat());
 }
 
-Fixed& Fixed::operator / (const Fixed& f) const
+Fixed Fixed::operator / (const Fixed& f) const
 {
     return Fixed(this->toFloat() / f.toFloat());
 }

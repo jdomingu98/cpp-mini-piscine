@@ -25,10 +25,10 @@ class Fixed
         bool operator == (const Fixed &f) const;
         bool operator != (const Fixed &f) const;
 
-        Fixed& operator + (const Fixed& f) const;
-        Fixed& operator - (const Fixed& f) const;
-        Fixed& operator * (const Fixed& f) const;
-        Fixed& operator / (const Fixed& f) const;
+        Fixed operator + (const Fixed& f) const;
+        Fixed operator - (const Fixed& f) const;
+        Fixed operator * (const Fixed& f) const;
+        Fixed operator / (const Fixed& f) const;
 
         Fixed& operator ++ ();
         Fixed operator ++ (int);
