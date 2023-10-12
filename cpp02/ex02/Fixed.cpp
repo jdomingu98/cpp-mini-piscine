@@ -25,7 +25,7 @@ Fixed::Fixed(const int v)
 Fixed::Fixed(const float v)
 {
     std::cout << "Float constructor called" << std::endl;
-    this->value = (float) roundf(v * (1 << this->rawBits));
+    this->value = roundf(v * (1 << this->rawBits));
 }
 
 Fixed& Fixed::operator = (const Fixed& f)
@@ -144,7 +144,7 @@ Fixed &Fixed::max(Fixed &f1, Fixed &f2) {
 }
 
 const Fixed &Fixed::max(const Fixed &f1, const Fixed &f2) {
-    return f1.getRawBits() < f2.getRawBits() ? f1 : f2;
+    return f1.getRawBits() > f2.getRawBits() ? f1 : f2;
 }
 
 std::ostream& operator << (std::ostream &o, const Fixed& f)
