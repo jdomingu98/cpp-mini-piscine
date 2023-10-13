@@ -7,15 +7,21 @@ int main()
 
 	st1.attack("st2");
 	st2.takeDamage(st1.getAttackDamage());
+
 	st1.attack("st2");
 	st2.takeDamage(st1.getAttackDamage());
+
 	st1.attack("st2");
 	st2.takeDamage(st1.getAttackDamage());
+
 	st1.attack("st2");
 	st2.takeDamage(st1.getAttackDamage());
+
     st2.beRepaired(10);
+
 	st1.attack("st2");
 	st2.takeDamage(st1.getAttackDamage());
+	
 	st1.attack("st2");
 	st2.takeDamage(st1.getAttackDamage());
 
