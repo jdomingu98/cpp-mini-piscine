@@ -31,7 +31,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap& ClapTrap::operator = (const ClapTrap& f)
 {
-    std::cout << "Assignation operator called" << std::endl;
+    std::cout << "ClapTrap assignation operator called" << std::endl;
     this->name = f.name;
     this->hitPoints = f.hitPoints;
     this->energyPoints = f.energyPoints;
