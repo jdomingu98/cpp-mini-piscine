@@ -1,6 +1,6 @@
-NAME	= animals
+NAME	= materiaRecap
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
-SRCS	= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS	= main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp ICharacter.cpp IMateriaSource.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 all:	$(NAME)
