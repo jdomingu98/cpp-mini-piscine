@@ -1,6 +1,6 @@
 NAME	= materiaRecap
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
-SRCS	= main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp ICharacter.cpp IMateriaSource.cpp
+SRCS	= main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 all:	$(NAME)
