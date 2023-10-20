@@ -11,7 +11,7 @@ class Brain
     public:
         Brain();
         Brain(const Brain& brain);
-        virtual ~Brain();
+        ~Brain();
         Brain& operator = (const Brain& brain);
 
         std::string getIdea(int index) const;

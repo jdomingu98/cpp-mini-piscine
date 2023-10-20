@@ -1,3 +1,4 @@
+
 #include "Cat.hpp"
 #include "Dog.hpp"
 
@@ -37,9 +38,13 @@ int main(void)
 	
 	std::cout << std::endl;
 
-	cat1.getBrain() == cat2.getBrain() ? std::cout << "Deep copy" : std::cout << "Shallow copy";
+	cat1.getBrain() != cat2.getBrain() ? std::cout << "Deep copy" : std::cout << "Shallow copy";
 
-	std::cout << std::endl;
+	std::cout << std::endl << std::endl;
+
+	Dog dog1;
+
+	Dog dog2(dog1);
 
 	return 0;
 }
