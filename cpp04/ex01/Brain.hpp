@@ -13,6 +13,9 @@ class Brain
         Brain(const Brain& brain);
         virtual ~Brain();
         Brain& operator = (const Brain& brain);
+
+        std::string getIdea(int index) const;
+        void setIdea(int index, std::string idea);
 };
 
 #endif

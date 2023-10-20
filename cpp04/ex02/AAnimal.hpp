@@ -9,10 +9,10 @@ class AAnimal
         std::string type;
     public:
         AAnimal();
-        AAnimal(const AAnimal& aanimal);
+        AAnimal(const AAnimal& aAnimal);
         virtual ~AAnimal();
 
-        AAnimal& operator = (const AAnimal& aanimal);
+        AAnimal& operator = (const AAnimal& aAnimal);
 
         std::string getType() const;
         virtual void makeSound() const = 0;

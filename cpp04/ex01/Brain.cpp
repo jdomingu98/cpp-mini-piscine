@@ -3,6 +3,9 @@
 Brain::Brain()
 {
     std::cout << "Brain default constructor called" << std::endl;
+    for (int i = 0; i < 100; i++) {
+        this->ideas[i] = "";
+    }
 }
 
 Brain::Brain(const Brain& brain)
@@ -22,4 +25,14 @@ Brain& Brain::operator = (const Brain& brain)
     for (int i = 0; i < 100; i++)
         this->ideas[i] = brain.ideas[i];
     return *this;
+}
+
+std::string Brain::getIdea(int index) const
+{
+    return this->ideas[index];
+}
+
+void Brain::setIdea(int index, std::string idea)
+{
+    this->ideas[index] = idea;
 }

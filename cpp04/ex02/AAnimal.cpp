@@ -6,10 +6,10 @@ AAnimal::AAnimal()
     this->type = "";
 }
 
-AAnimal::AAnimal(const AAnimal& aanimal)
+AAnimal::AAnimal(const AAnimal& aAnimal)
 {
     std::cout << "AAnimal copy constructor called" << std::endl;
-    *this = aanimal;
+    *this = aAnimal;
 }
 
 AAnimal::~AAnimal()
@@ -17,19 +17,14 @@ AAnimal::~AAnimal()
     std::cout << "AAnimal destructor called" << std::endl;
 }
 
-AAnimal& AAnimal::operator = (const AAnimal& aanimal)
+AAnimal& AAnimal::operator = (const AAnimal& aAnimal)
 {
     std::cout << "AAnimal assignation operator called" << std::endl;
-    this->type = aanimal.type;
+    this->type = aAnimal.type;
     return *this;
 }
 
 std::string AAnimal::getType() const
 {
     return this->type;
-}
-
-void AAnimal::makeSound() const
-{
-    std::cout << "AAnimal sound" << std::endl;
 }
