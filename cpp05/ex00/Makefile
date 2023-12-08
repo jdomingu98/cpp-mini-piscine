@@ -3,6 +3,7 @@ CPP_FLAGS	= -Wall -Werror -Wextra -std=c++98
 SRCS		= main.cpp Bureaucrat.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
+class	   ?= class
 UPPER		= $(shell echo $(class) | tr '[:lower:]' '[:upper:]')
 FST_UP		= $(shell echo "$(class)" | awk '{print toupper(substr($$0, 1, 1)) tolower(substr($$0, 2))}')
 
