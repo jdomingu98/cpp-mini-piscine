@@ -19,7 +19,7 @@ AForm *Intern::makeForm(std::string const &name, std::string const &target)
 {
     AForm *form = NULL;
     std::string forms[] = { "shrubbery", "robotomy", "pardon" };
-    int i;
+    unsigned long i;
 
 	for (i = 0; i < forms->length(); i++) {
 		if (name.find(forms[i]) != std::string::npos) {

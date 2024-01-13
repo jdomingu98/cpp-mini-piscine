@@ -39,7 +39,7 @@ AForm::AForm(std::string const name, int const gradeToSign, int const gradeToExe
 
 AForm::~AForm() {}
 
-AForm::AForm(AForm const &o) : name(o.name), gradeToSign(o.gradeToSign), gradeToExecute(o.gradeToExecute), isSigned(o.isSigned)
+AForm::AForm(AForm const &o) : name(o.name), isSigned(o.isSigned), gradeToSign(o.gradeToSign), gradeToExecute(o.gradeToExecute)
 {
 	*this = o;
 }

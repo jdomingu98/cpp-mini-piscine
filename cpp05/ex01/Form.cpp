@@ -30,7 +30,7 @@ Form::Form(std::string const name, int const gradeToSign, int const gradeToExecu
 
 Form::~Form() {}
 
-Form::Form(Form const &o) : name(o.name), gradeToSign(o.gradeToSign), gradeToExecute(o.gradeToExecute), isSigned(o.isSigned)
+Form::Form(Form const &o) : name(o.name), isSigned(o.isSigned), gradeToSign(o.gradeToSign), gradeToExecute(o.gradeToExecute)
 {
 	*this = o;
 }

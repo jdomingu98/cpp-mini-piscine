@@ -13,6 +13,7 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &o) 
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &o)
 {
+    (void) o;
     return *this;
 }
 

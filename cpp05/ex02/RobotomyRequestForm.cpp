@@ -13,6 +13,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &o) : AForm(o
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &o)
 {
+    (void) o;
     return *this;
 }
 
