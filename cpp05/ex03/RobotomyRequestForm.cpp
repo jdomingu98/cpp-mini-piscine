@@ -25,7 +25,7 @@ std::string const RobotomyRequestForm::getTarget() const
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
     AForm::execute(executor);
-    
+    std::srand(time(NULL));
     std::cout << "* drilling noises *" << std::endl;
     if (std::rand() % 2)
         std::cout << target << " has been robotomized successfully" << std::endl;
