@@ -161,7 +161,7 @@ static void castInteger(const std::string input)
     else
         std::cout << "int: " << i << std::endl;
 
-    if (static_cast<double>(i) > 9.22337e+18 || static_cast<double>(i) < -9.223377e+18)
+    if (static_cast<double>(i) > 9.22337e+18 || static_cast<double>(i) < -9.22337e+18)
     {
         std::cout << "float: impossible" << std::endl;
         std::cout << "double: impossible" << std::endl;
@@ -187,12 +187,13 @@ static void castFloat(const std::string input)
     else
         std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
     
-    if (f < std::numeric_limits<int>::min() || f > std::numeric_limits<int>::max())
+    if (static_cast<int>(f) < std::numeric_limits<int>::min()
+            || static_cast<int>(f) > std::numeric_limits<int>::max())
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(f) << std::endl;
     
-    if (f > 9.22337e+18 || f < -9.223377e+18)
+    if (f > 9.22337e+18 || f < -9.22337e+18)
     {
         std::cout << "float: impossible" << std::endl;
         std::cout << "double: impossible" << std::endl;
@@ -213,12 +214,12 @@ static void castDouble(const std::string input)
     else
         std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
     
-    if (d < std::numeric_limits<int>::min() || d > std::numeric_limits<int>::max())
+    if (static_cast<int>(d) < std::numeric_limits<int>::min() || static_cast<int>(d) > std::numeric_limits<int>::max())
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(d) << std::endl;
     
-    if (d > 9.22337e+18 || d < -9.223377e+18)
+    if (d > 9.22337e+18 || d < -9.22337e+18)
     {
         std::cout << "float: impossible" << std::endl;
         std::cout << "double: impossible" << std::endl;
