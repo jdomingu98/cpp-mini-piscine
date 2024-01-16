@@ -4,6 +4,7 @@ SRCS		= main.cpp ScalarConverter.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 class	   ?= class
+arg 	   ?= 0
 UPPER		= $(shell echo $(class) | tr '[:lower:]' '[:upper:]')
 FST_UP		= $(shell echo "$(class)" | awk '{print toupper(substr($$0, 1, 1)) tolower(substr($$0, 2))}')
 
@@ -66,6 +67,6 @@ fclean: clean
 re: 	fclean all
 
 e:		re
-	./$(NAME)
+	./$(NAME) $(arg)
 
 .PHONY: all clean fclean re create create_hpp create_cpp e

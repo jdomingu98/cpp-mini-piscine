@@ -124,20 +124,27 @@ static void castCharacter(const std::string input)
     else
         std::cout << "char: '" << input[0] << "'" << std::endl;
     
-    if (input[0] < std::numeric_limits<int>::min() || input[0] > std::numeric_limits<int>::max())
+    if (static_cast<int>(input[0]) < std::numeric_limits<int>::min()
+            || static_cast<int>(input[0]) > std::numeric_limits<int>::max())
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(input[0]) << std::endl;
     
-    if (input[0] < std::numeric_limits<float>::min() || input[0] > std::numeric_limits<float>::max())
+    if (static_cast<double>(input[0]) > 9.22337e+18 || static_cast<double>(input[0]) < -9.223377e+18)
+    {
         std::cout << "float: impossible" << std::endl;
-    else
-        std::cout << "float: " << static_cast<float>(input[0]) << ".0f" << std::endl;
-    
-    if (input[0] < std::numeric_limits<double>::min() || input[0] > std::numeric_limits<double>::max())
         std::cout << "double: impossible" << std::endl;
+    }
+    else if (static_cast<double>(input[0]) >= 1000000.0)
+    {
+        std::cout << "float: " << static_cast<float>(input[0]) << "f" << std::endl;
+        std::cout << "double: " << static_cast<double>(input[0]) << std::endl;
+    }
     else
+    {
+        std::cout << "float: " << static_cast<float>(input[0]) << ".0f" << std::endl;
         std::cout << "double: " << static_cast<double>(input[0]) << ".0" << std::endl;
+    }
 }
 
 static void castInteger(const std::string input)
@@ -154,8 +161,21 @@ static void castInteger(const std::string input)
     else
         std::cout << "int: " << i << std::endl;
 
-    std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl;
-    std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
+    if (static_cast<double>(i) > 9.22337e+18 || static_cast<double>(i) < -9.223377e+18)
+    {
+        std::cout << "float: impossible" << std::endl;
+        std::cout << "double: impossible" << std::endl;
+    }
+    else if (static_cast<double>(i) >= 1000000.0)
+    {
+        std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
+        std::cout << "double: " << static_cast<double>(i) << std::endl;
+    }
+    else
+    {
+        std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl;
+        std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
+    }
 }
 
 static void castFloat(const std::string input)
@@ -167,20 +187,22 @@ static void castFloat(const std::string input)
     else
         std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
     
-    if (f < std::numeric_limits<int>::min() || f > std::numeric_limits<int>::max())
+    if (static_cast<int>(f) < std::numeric_limits<int>::min()
+            || static_cast<int>(f) > std::numeric_limits<int>::max())
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(f) << std::endl;
     
-    if (f < std::numeric_limits<float>::min() || f > std::numeric_limits<float>::max())
+    if (f > 9.22337e+18 || f < -9.223377e+18)
+    {
         std::cout << "float: impossible" << std::endl;
-    else
-        std::cout << "float: " << f << "f" << std::endl;
-    
-    if (f < std::numeric_limits<double>::min() || f > std::numeric_limits<double>::max())
         std::cout << "double: impossible" << std::endl;
+    }
     else
+    {
+        std::cout << "float: " << f << "f" << std::endl;
         std::cout << "double: " << static_cast<double>(f) << std::endl;
+    }
 }
 
 static void castDouble(const std::string input)
@@ -192,20 +214,21 @@ static void castDouble(const std::string input)
     else
         std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
     
-    if (d < std::numeric_limits<int>::min() || d > std::numeric_limits<int>::max())
+    if (static_cast<int>(d) < std::numeric_limits<int>::min() || static_cast<int>(d) > std::numeric_limits<int>::max())
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(d) << std::endl;
     
-    if (d < std::numeric_limits<float>::min() || d > std::numeric_limits<float>::max())
+    if (d > 9.22337e+18 || d < -9.223377e+18)
+    {
         std::cout << "float: impossible" << std::endl;
-    else
-        std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
-    
-    if (d < std::numeric_limits<double>::min() || d > std::numeric_limits<double>::max())
         std::cout << "double: impossible" << std::endl;
+    }
     else
+    {
+        std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
         std::cout << "double: " << d << std::endl;
+    }
 }
 
 static void castSpecial(const std::string input)

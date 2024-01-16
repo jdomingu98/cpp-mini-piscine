@@ -2,8 +2,7 @@
 #include <ctime>
 #include <iostream>
 
-/*#include <sys/types.h>
-#include <sys/wait.h>*/
+#include <unistd.h>
 
 #include "A.hpp"
 #include "B.hpp"
@@ -81,7 +80,7 @@ int main(void) {
 
 	delete ptr;
 
-	//wait(1000);
+	sleep(1);
 
 	ptr = generate();
 	identify(*ptr);
