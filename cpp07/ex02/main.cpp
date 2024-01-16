@@ -17,7 +17,7 @@ int main(int, char**)
     //SCOPE
     {
         Array<int> tmp = numbers;
-        Array<int> test(tmp);
+        Array<int> test(numbers);
     }
 
     for (int i = 0; i < MAX_VAL; i++)

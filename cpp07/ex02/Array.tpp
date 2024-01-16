@@ -10,7 +10,7 @@ template <typename T>
 Array<T>::Array(unsigned int n) : array(new T[n]), arraySize(n) {}
 
 template <typename T>
-Array<T>::Array(Array const &o)
+Array<T>::Array(Array const &o) : array(new T[o.arraySize]), arraySize(o.arraySize)
 {
     *this = o;
 }
@@ -24,11 +24,14 @@ Array<T>::~Array(void)
 template <typename T>
 Array<T> &Array<T>::operator=(Array const &o)
 {
-    delete [] array;
-    arraySize = o.arraySize;
-    array = new T[o.arraySize];
-    for (unsigned int i = 0; i < arraySize; i++)
-        array[i] = o.array[i];
+    if (this != &o)
+    {
+        delete [] array;
+        arraySize = o.arraySize;
+        array = new T[o.arraySize];
+        for (unsigned int i = 0; i < arraySize; i++)
+            array[i] = o.array[i];
+    }
     return *this;
 }
 
