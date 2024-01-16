@@ -187,8 +187,7 @@ static void castFloat(const std::string input)
     else
         std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
     
-    if (static_cast<int>(f) < std::numeric_limits<int>::min()
-            || static_cast<int>(f) > std::numeric_limits<int>::max())
+    if (f < std::numeric_limits<int>::min() || f > std::numeric_limits<int>::max())
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(f) << std::endl;
@@ -214,7 +213,7 @@ static void castDouble(const std::string input)
     else
         std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
     
-    if (static_cast<int>(d) < std::numeric_limits<int>::min() || static_cast<int>(d) > std::numeric_limits<int>::max())
+    if (d < std::numeric_limits<int>::min() || d > std::numeric_limits<int>::max())
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(d) << std::endl;
