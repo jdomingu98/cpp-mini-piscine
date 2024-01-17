@@ -23,6 +23,7 @@ bureaucrat-form
 bureaucrat-aform
 bureaucrat-intern
 *.pdf
+*.csv
 
 # Prerequisites
 *.d
