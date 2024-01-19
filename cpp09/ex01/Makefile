@@ -1,4 +1,4 @@
-NAME		= rpn
+NAME		= RPN
 CPP_FLAGS	= -Wall -Werror -Wextra -std=c++98
 SRCS		= main.cpp RPN.cpp
 OBJS		= $(SRCS:.cpp=.o)
