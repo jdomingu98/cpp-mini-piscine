@@ -233,24 +233,20 @@ static void castDouble(const std::string input)
 
 static void castSpecial(const std::string input)
 {
+    std::cout << "char: impossible" << std::endl;
+    std::cout << "int: " << "impossible" << std::endl;
     if (input == "+inf" || input == "+inff")
     {
-        std::cout << "char: Non displayable" << std::endl;
-        std::cout << "int: " << "impossible" << std::endl;
         std::cout << "float: " << "+inff" << std::endl;
         std::cout << "double: " << "+inf" << std::endl;
     }
     else if (input == "-inf" || input == "-inff")
     {
-        std::cout << "char: Non displayable" << std::endl;
-        std::cout << "int: " << "impossible" << std::endl;
         std::cout << "float: " << "-inff" << std::endl;
         std::cout << "double: " << "-inf" << std::endl;
     }
     else if (input == "nan" || input == "nanf")
     {
-        std::cout << "char: Non displayable" << std::endl;
-        std::cout << "int: " << "impossible" << std::endl;
         std::cout << "float: " << "nanf" << std::endl;
         std::cout << "double: " << "nan" << std::endl;
     }
