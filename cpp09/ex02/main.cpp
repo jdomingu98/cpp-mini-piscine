@@ -9,8 +9,7 @@ int main(int argc, char **argv)
             std::cerr << "[ERROR] Too few arguments. Usage: ./PmergeMe <args>" << std::endl;
             return 1;
         }
-        PmergeMe sortMerge(argc, argv);
-        sortMerge.sort();
+        PmergeMe::sort(argc, argv);
     }
     catch(const std::exception& e)
     {
