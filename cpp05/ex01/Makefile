@@ -1,4 +1,4 @@
-NAME		= bureaucrat-form
+NAME		= bureaucratForm
 CPP_FLAGS	= -Wall -Werror -Wextra -std=c++98
 SRCS		= main.cpp Bureaucrat.cpp Form.cpp
 OBJS		= $(SRCS:.cpp=.o)
