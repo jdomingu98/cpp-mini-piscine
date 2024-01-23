@@ -1,29 +1,3 @@
-.vscode/*
-megaphone
-contactList
-account
-zombie
-zombieHorde
-brain
-violence
-occurence
-harl
-fixedPoints00
-fixedPoints01
-fixedPoints02
-clapTrap
-scavTrap
-flagTrap
-animals
-brainIdeas
-abstractClass
-materiaRecap
-bureaucrat
-bureaucrat-form
-bureaucrat-aform
-bureaucrat-intern
-*.pdf
-*.csv
 
 # Prerequisites
 *.d
@@ -57,3 +31,62 @@ bureaucrat-intern
 *.exe
 *.out
 *.app
+
+## Cpp00
+megaphone
+contactList
+account
+
+## Cpp01
+zombie
+zombieHorde
+brain
+violence
+occurence
+harl
+
+## Cpp02
+fixedPoints00
+fixedPoints01
+fixedPoints02
+
+## Cpp03
+clapTrap
+scavTrap
+flagTrap
+
+## Cpp04
+animals
+brainIdeas
+abstractClass
+materiaRecap
+
+## Cpp05
+bureaucrat
+bureaucratForm
+bureaucratAform
+bureaucratIntern
+
+## Cpp06
+scalarConverter
+serializer
+identify
+
+## Cpp07
+whatever
+iter
+array
+
+## Cpp08
+easyFind
+span
+mutantStack
+
+## Cpp09
+btc
+RPN
+PmergeMe
+
+# Others
+.vscode/*
+*.pdf
