@@ -70,34 +70,34 @@ void merge(T &list, int left, int mid, int right)
     T leftSide(mid - left + 1);
     T rightSide(right - mid);
 
-    typename T::iterator itLeft = leftSide.begin();
-    typename T::iterator itRight = rightSide.begin();
+    typename T::iterator leftIt = leftSide.begin();
+    typename T::iterator rightIt = rightSide.begin();
     
     for (int i = left; i < mid + 1; i++)
     {
-        *itLeft = list[i];
-        itLeft++;
+        *leftIt = list[i];
+        leftIt++;
     }
     
     for (int i = mid; i < right; i++)
     {
-        *itRight = list[i + 1];
-        itRight++;        
+        *rightIt = list[i + 1];
+        rightIt++;        
     }
 
-    itLeft = leftSide.begin();
-    itRight = rightSide.begin();
+    leftIt = leftSide.begin();
+    rightIt = rightSide.begin();
     
     int i = left;
     
-    while (itLeft != leftSide.end() && itRight != rightSide.end())
-        list.at(i++) = *itLeft <= *itRight ? *itLeft++ : *itRight++;
+    while (leftIt != leftSide.end() && rightIt != rightSide.end())
+        list.at(i++) = *leftIt <= *rightIt ? *leftIt++ : *rightIt++;
     
-    while (itLeft != leftSide.end())
-        list[i++] = *itLeft++;
+    while (leftIt != leftSide.end())
+        list[i++] = *leftIt++;
 
-    while (itRight != rightSide.end())
-        list[i++] = *itRight++;
+    while (rightIt != rightSide.end())
+        list[i++] = *rightIt++;
 }
 
 template<typename T>
