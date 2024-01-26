@@ -6,10 +6,11 @@ int main(int argc, char **argv)
     {
         if (argc != 2)
         {
-            std::cout << "[ERROR] Missing arguments. Usage: ./btc <file>" << std::endl;
+            std::cerr << "Error: could not open file." << std::endl;
             return 1;
         }
-        BitcoinExchange::getBitcoinValuesonDate(argv[1]);
+        BitcoinExchange btc;
+        btc.getBitcoinValuesOnDate(argv[1]);
     }
     catch(const std::exception& e)
     {

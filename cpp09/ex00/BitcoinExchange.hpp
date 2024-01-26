@@ -3,21 +3,27 @@
 
 # include <iostream>
 # include <fstream>
-# include <sstream>
-# include <string>
 # include <map>
 # include <algorithm>
-# include <iomanip>
+
+# define SPECIAL_CHARS " \t\n\r\f\v"
 
 class BitcoinExchange
 {
     private:
+        std::map<std::string, float> database;
+        int year;
+        int month;
+        int day;
+        void readDatabase(std::string filename);
+        bool checkKey(std::string key);
+        void printResults(std::string key, float value);
+    public:
         BitcoinExchange();
         ~BitcoinExchange();
-    public:
         BitcoinExchange(const BitcoinExchange& o);
         BitcoinExchange& operator=(const BitcoinExchange& o);
-        static void getBitcoinValuesonDate(std::string filename);
+        void getBitcoinValuesOnDate(std::string filename);
 };
 
 #endif
