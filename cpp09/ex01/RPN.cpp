@@ -62,7 +62,7 @@ void RPN::run(std::string input)
     {
         if (!isOperation(input[i]) && !std::isdigit(input[i]) && input[i] != ' ')
             throw ParseException();
-        if (isOperation(input[i]))
+        if (isOperation(input[i]) && stack.size() >= 1)
         {
             int num2 = stack.top();
             stack.pop();
@@ -84,6 +84,8 @@ void RPN::run(std::string input)
         }
         else if (std::isdigit(input[i]))
             stack.push(static_cast<int>(input[i] - '0'));
+        else if (isOperation(input[i]))
+            throw ParseException();
     }
     if (stack.size() != 1)
         throw ParseException();
