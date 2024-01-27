@@ -142,7 +142,7 @@ void PmergeMe::sort(int argc, char **argv)
     
     for (int i = 1; i < argc; i++) {
         if (!isNumber(argv[i]))
-            throw std::invalid_argument("[ERROR] Invalid argument. Usage: ./PmergeMe <list of positive numbers>");
+            throw std::invalid_argument("[ERROR] Invalid argument. Usage: ./PmergeMe <list of integer positive numbers>");
         number = std::strtol(argv[i], NULL, 10);
         vectorList.push_back(number);
         dequeList.push_back(number);

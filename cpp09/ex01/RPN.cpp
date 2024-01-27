@@ -5,7 +5,7 @@ class RPN::ParseException : public std::exception
     public:
         virtual const char* what() const throw()
         {
-            return ("[ERROR] Invalid symbol found");
+            return ("[ERROR] Invalid symbol or expression found!");
         }
 };
 
@@ -14,7 +14,7 @@ class RPN::DivideByZeroException : public std::exception
     public:
         virtual const char* what() const throw()
         {
-            return ("[ERROR] Cannot divide by zero");
+            return ("[ERROR] Cannot divide by zero!");
         }
 };
 
@@ -85,5 +85,7 @@ void RPN::run(std::string input)
         else if (std::isdigit(input[i]))
             stack.push(static_cast<int>(input[i] - '0'));
     }
+    if (stack.size() != 1)
+        throw ParseException();
     std::cout << stack.top() << std::endl;
 }

@@ -6,7 +6,7 @@ int main(int argc, char **argv)
     {
         if(argc < 2)
         {
-            std::cerr << "[ERROR] Too few arguments. Usage: ./PmergeMe <args>" << std::endl;
+            std::cerr << "[ERROR] Too few arguments. Usage: ./PmergeMe <list of integer positive numbers>" << std::endl;
             return 1;
         }
         PmergeMe::sort(argc, argv);
